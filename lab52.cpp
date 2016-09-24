@@ -22,20 +22,25 @@ void newLine();
 int main(){
     Student stud[5];
     int a;
-    const char* remark[10];
+    char* remark[10];
     cout << "Enter student records: \n";
     for (int a = 0; a<5; a++){
-    cout << "Student " << a+1 << ": " << endl;
-    cout << "ID: ";
-    cin >> stud[a].aydi;
-    newLine();
-    cout << "Name: ";
-    cin.getline(stud[a].name.fullName, 30);
-    cout << "Grade: ";
-    cin >> stud[a].gradea >> stud[a].gradeb >> stud[a].gradec;
-    stud[a].finave = (stud[a].gradea+stud[a].gradeb+stud[a].gradec);	}
-    
-   cout << "\n";
+        cout << "Student " << a+1 << ": " << endl;
+        cout << "ID: ";
+        cin >> stud[a].aydi;
+        cin.ignore();
+        cout << "Name: ";
+        cin.getline(stud[a].name.fullName, 30);
+        
+        cout << "Grade: ";
+        cin >> stud[a].gradea; 
+        cin >> stud[a].gradeb; 
+        cin >> stud[a].gradec;
+        cin.ignore();
+        stud[a].finave = (stud[a].gradea+stud[a].gradeb+stud[a].gradec);	
+        
+    }
+    cout << "\n";
   	cout.setf(ios::fixed);
 	cout.setf(ios::showpoint);
 	cout.precision(2);
